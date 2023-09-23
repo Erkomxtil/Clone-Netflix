@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Helvetica Neue', sans-serif;
+  letter-spacing: 0;
+}
+
+.optionLanguage {
+  @apply bg-[rgb(0,0,0,0.5)]
+}
+
+.backgroundIntro {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%),
+  url("../src/assets/intro.jpg");
+}
+
+.bannerBackground {
+  background: radial-gradient( 120.35% 220% at 49.86% -6.29%, #e50914 0%, #0e1b4f 46.15%, #0d1121 100% );
+
+  @media screen and (min-width:660px) {
+    background: unset;
+  }
+  @apply py-[50px] px-[30px] rounded-[4px] mt-[-44px] 
+}
+
+.backgroundMm {
+  @media screen and (min-width:660px) {
+    background: radial-gradient( 51.39% 511.66% at 47.68% -217.91%, #ff9900 0%, #e50914 17.27%, #0e1b4f 79.44%, #000413 100% );
+  }
+
+  @apply mm:mx-[74px] p-[22px] rounded-[4px]
+}
+
+.largeScreen {
+  @apply lg:max-w-[calc(83.33333333333334%-6rem)] lg:mx-[auto] lg:px-[32px]
+}
