@@ -8,7 +8,7 @@ interface WatchOnTvMobileProps {
 
 export const WatchOnTvMobile = ({tvVideo,title, text, video, image}:WatchOnTvMobileProps) => {
   return (
-    <div className="bg-black py-[56px] sm:py-[72px]">
+    <div className={tvVideo ? "bg-black py-[56px] sm:py-[72px]": "borderSection bg-black py-[56px] sm:py-[72px]" }>
       <div className={tvVideo ? 
       "px-[24px] text-[white] text-center justify-center md:flex md:max-w-[calc(100%-4rem)] md:mx-[auto] md:items-center md:text-left md:p-0 lg:max-w-[calc(83.33333333333334%-6rem)] xxl:max-w-[calc(66.66666666666666%-6rem)]": 
       "px-[24px] text-[white] text-center justify-center md:flex md:flex-row-reverse md:max-w-[calc(100%-4rem)] md:mx-[auto] md:items-center md:text-left md:p-0 lg:max-w-[calc(83.33333333333334%-6rem)] xxl:max-w-[calc(66.66666666666666%-6rem)]"

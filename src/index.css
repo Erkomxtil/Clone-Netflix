@@ -7,6 +7,9 @@
   letter-spacing: 0;
 }
 
+.borderSection {
+  @apply border-solid border-t-[10px] border-[#232323]
+}
 .optionLanguage {
   @apply bg-[rgb(0,0,0,0.5)]
 }
@@ -35,4 +38,8 @@
 
 .largeScreen {
   @apply lg:max-w-[calc(83.33333333333334%-6rem)] lg:mx-[auto] lg:px-[32px]
+}
+
+.active {
+  @apply transition-[max-height,opacity]  duration-100 ease-in-out
 }

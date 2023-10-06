@@ -14,8 +14,10 @@ interface ProfilDownloadProps {
 
 export const ProfilDownload = ({ downloadGif,mainImage, title, altText,secondImage, text, secondAltText, extraText1, extraText2,gif, gifAlt}:ProfilDownloadProps) => {
   return (
-    <div className="border-solid border-t-[10px] border-[#232323] bg-black">
-      <div className={!downloadGif ? " text-[white] py-[56px] px-[32px] md:flex md:flex-row-reverse md:items-center md:max-w-[calc(83.33333333333334%-6rem)] md:mx-[auto] xxl:max-w-[calc(66.66666666666666%-6rem)] xxl:mx-[auto]": " text-[white] py-[56px] px-[32px] md:flex md:items-center md:max-w-[calc(83.33333333333334%-6rem)] md:mx-[auto] xxl:max-w-[calc(66.66666666666666%-6rem)] xxl:mx-[auto]"}>
+    <div className="borderSection bg-black">
+      <div className={!downloadGif ? 
+        " text-[white] py-[56px] px-[32px] sm:py-[72px] md:flex md:items-center md:max-w-[calc(83.33333333333334%-6rem)] md:mx-[auto] xxl:max-w-[calc(66.66666666666666%-6rem)] xxl:mx-[auto]": 
+        "text-[white] py-[56px] px-[32px] sm:py-[72px] md:flex md:flex-row-reverse md:items-center md:max-w-[calc(83.33333333333334%-6rem)] md:mx-[auto] xxl:max-w-[calc(66.66666666666666%-6rem)] xxl:mx-[auto]"}>
         <div className="text-center md:basis-[50%]">
           <h2 className="text-[2rem] font-[700] leading-[2.5rem] md:text-[3rem] md:font-[900] md:text-left md:leading-[3rem]">{title}</h2>
           <p className="mt-[1rem] text-[1.125rem] md:text-[1.5rem] md:text-left">{text}</p>

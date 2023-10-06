@@ -1,7 +1,12 @@
 import popCorn from "../assets/popCorn.svg"
 import arrowBtn from "../assets/arrowMoreInfo.svg"
 
+import { UserContext } from "../utils/context/languageContext"
+import { useContext } from "react"
+
 export const Banner = () => {
+  const {language} = useContext(UserContext)
+
   return (
     <div className="bg-black">
       <div className="bg-[black] text-[white] px-[24px] pt-[16px] mm:flex items-center justify-center backgroundMm">
@@ -10,12 +15,12 @@ export const Banner = () => {
         </div>
         <div className="bannerBackground mm:pb-0">
           <p className="text-xl font-[700]">
-          Le Netflix que vous aimez pour juste 5,99&nbsp;€.
+            {language === "fr" ? "Le Netflix que vous aimez pour juste 5,99€.": "The Netflix you love for just 5.99€."}          
           </p>
           <p className="font-base mt-[4px] mb-[8px] leading-6 font-[500]">
-          Choisissez l'offre Standard avec pub.
+            {language === "fr" ? "Choisissez l'offre Standard avec pub.": "Get the Standard with ads plan."}          
           </p>
-        <button className="underline text-[#448ef4] flex font-[700]">En savoir plus <img src={arrowBtn} alt="Arrow more info" /></button>
+        <button className="underline text-[#448ef4] flex font-[700]">{language === "fr" ? "En savoir plus" : "Learn More"} <img src={arrowBtn} alt="Arrow more info" /></button>
         </div>
       </div>
     </div>
