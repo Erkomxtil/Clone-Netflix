@@ -11,11 +11,36 @@ import profilImg from "../../assets/profils.png"
 import stranger from "../../assets/stranger.jpg"
 import boxshot from "../../assets/boxshot.png"
 import download from "../../assets/download-icon.gif"
-import tv from "../../assets/tv.png"
-import macMobile from "../../assets/mac-tablet-phone.png"
+// import tv from "../../assets/tv.png"
+// import macMobile from "../../assets/mac-tablet-phone.png"
 import { AccordionDatas } from "../../datas/AccordionDatas"
 
+import { useContext, useEffect, useState } from "react"
+import { UserContext } from "../../utils/context/languageContext"
+
+import { WatchDatasEn, WatchDatasFr } from "../../datas/WatchDatas"
+
+interface WatchProps {
+  tvVideo: boolean,
+  title: string,
+  text: string,
+  image: string,
+  video: string
+}
+
 export const Home = () => {
+  const {language} = useContext(UserContext)
+  const [watch, setWatch] = useState<WatchProps[]>()
+
+useEffect(()=> {
+  if(language === "fr") {
+    setWatch(WatchDatasFr)
+  }
+  if(language === "en") {
+    setWatch(WatchDatasEn)
+  }
+},[language])
+
   return (
     <>
       <div className="backgroundIntro relative bg-black">
@@ -25,20 +50,16 @@ export const Home = () => {
         <div className="absolute top-0 left-0 bg-[black] bg-opacity-[0.5] z-0 h-[-webkit-fill-available] w-full"></div>
       </div>
       <Banner />
-      <WatchOnTvMobile 
-        tvVideo={true}
-        title="Regardez Netflix sur&nbsp;votre TV"
-        text="Regardez Netflix sur votre Smart&nbsp;TV, PlayStation, Xbox, Chromecast, Apple TV, lecteur Blu-ray et bien plus."
-        image={tv}
-        video="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v"
-      />
-      <WatchOnTvMobile 
-        tvVideo={false}
-        title="Où que vous soyez"
-        text="Regardez des films et séries en accès illimité sur votre TV, smartphone, tablette et ordinateur."
-        image={macMobile}
-        video="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v"
-      />
+      {watch?.map((language, index) =>         
+        <WatchOnTvMobile
+          key={index}
+          tvVideo={language.tvVideo}
+          title={language.title}
+          text={language.text}
+          image={language.image}
+          video={language.video}
+        />
+      )}
       <ProfilDownload 
       title="Créez des profils pour les enfants"
       text="Les enfants découvrent de nouvelles aventures et retrouvent leurs personnages préférés dans un espace bien à eux, déjà inclus dans votre abonnement."
