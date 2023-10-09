@@ -7,37 +7,33 @@ import { ProfilDownload } from "../../components/ProfilDownload"
 import { Accordion } from "../../components/Accordion"
 import { Footer } from "../../components/Footer"
 
-import profilImg from "../../assets/profils.png"
-import stranger from "../../assets/stranger.jpg"
-import boxshot from "../../assets/boxshot.png"
-import download from "../../assets/download-icon.gif"
-// import tv from "../../assets/tv.png"
-// import macMobile from "../../assets/mac-tablet-phone.png"
+
 import { AccordionDatas } from "../../datas/AccordionDatas"
 
 import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../../utils/context/languageContext"
 
-import { WatchDatasEn, WatchDatasFr } from "../../datas/WatchDatas"
+import { WatchDatasFr, WatchDatasEn } from "../../datas/WatchDatas"
+import { ProfilDatasFr, ProfilDatasEn } from "../../datas/ProfilDatas"
 
-interface WatchProps {
-  tvVideo: boolean,
-  title: string,
-  text: string,
-  image: string,
-  video: string
-}
+import { WatchProps } from "../../shared/interfaces/watch.interface"
+import { ProfilProps } from "../../shared/interfaces/profil.interface"
+
+
 
 export const Home = () => {
   const {language} = useContext(UserContext)
   const [watch, setWatch] = useState<WatchProps[]>()
+  const [profil, setProfil] = useState<ProfilProps[]>()
 
 useEffect(()=> {
   if(language === "fr") {
     setWatch(WatchDatasFr)
+    setProfil(ProfilDatasFr)
   }
   if(language === "en") {
     setWatch(WatchDatasEn)
+    setProfil(ProfilDatasEn)
   }
 },[language])
 
@@ -60,25 +56,21 @@ useEffect(()=> {
           video={language.video}
         />
       )}
-      <ProfilDownload 
-      title="Créez des profils pour les enfants"
-      text="Les enfants découvrent de nouvelles aventures et retrouvent leurs personnages préférés dans un espace bien à eux, déjà inclus dans votre abonnement."
-      mainImage={profilImg}
-      altText="Enfants et la lapin heureux"
-      downloadGif={false}
-      />
-      <ProfilDownload 
-        title="Téléchargez vos séries pour les regarder hors connexion" 
-        text="Uniquement disponible dans les offres sans pub."
-        mainImage={stranger} 
-        altText="Stranger things poster"
-        secondImage={boxshot}
-        secondAltText="Mini poster Stranger things"
-        extraText1="Stranger Things"
-        extraText2="Téléchargement en cours..."
-        gif={download}
-        downloadGif={true}
-      />
+      {profil?.map((profil, index) => 
+        <ProfilDownload
+          key={index}
+          title={profil.title}
+          text={profil.text}
+          mainImage={profil.mainImage}
+          altText={profil.altText}
+          downloadGif={profil.downloadGif}
+          secondImage={profil.secondImage}
+          secondAltText={profil.secondAltText}
+          extraText1={profil.extraText1}
+          extraText2={profil.extraText2}
+          gif={profil.gif}
+        />
+      )}
       <div className="borderSection text-[white] bg-black pt-[56px] px-[32px] sm:py-[72px]">
         <div className="lg:max-w-[calc(83.33333333333334%-6rem)] lg:mx-[auto]">
           <h2 className="text-center text-[2rem] md:text-[3rem] font-[700] mb-[24px]">
