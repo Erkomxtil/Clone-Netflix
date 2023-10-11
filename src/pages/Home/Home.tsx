@@ -84,7 +84,7 @@ useEffect(()=> {
           <div className="bg-black pt-[2.85rem]">
             <h3 className="text-[white] text-center px-[64px]">{
               language === "fr" ?
-            "Prêt à regarder Netflix ? Saisissez votre adresse e-mail pour vous abonner ou réactiver votre abonnement.": "Ready to watch? Enter your email to create or restart your membership."}</h3>
+              "Prêt à regarder Netflix ? Saisissez votre adresse e-mail pour vous abonner ou réactiver votre abonnement.": "Ready to watch? Enter your email to create or restart your membership."}</h3>
             <EmailForm />
           </div>
         </div>
