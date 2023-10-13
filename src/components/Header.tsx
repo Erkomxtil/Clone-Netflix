@@ -4,6 +4,7 @@ import { UserContext } from "../utils/context/languageContext"
 import { useContext } from "react"
 
 import { SelectLanguage } from "./SelectLanguage"
+import { Link } from "react-router-dom"
 
 
 export const Header = () => {
@@ -20,7 +21,9 @@ export const Header = () => {
               <img src={arrow} alt="Arrow select" />
             </div>
           </div>
-          <button className="bg-red text-[white]  px-[16px] py-[4px] rounded-md text-[14px] font-bold mx-[0.25rem] ml-6">{language === "fr" ? "S'identifier": "Sign In"}</button>
+          <Link to="/connexion">
+            <button className="bg-red text-[white]  px-[16px] py-[4px] rounded-md text-[14px] font-bold mx-[0.25rem] ml-6">{language === "fr" ? "S'identifier": "Sign In"}</button>        
+          </Link>
         </div>
       </header>
     </>
