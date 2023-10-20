@@ -163,3 +163,73 @@ export const FooterDatasEn = [
     text:"Ad Choices" 
   }
 ]
+
+export const FooterSigninDatasFr = [
+  {
+    link:"https://help.netflix.com/support/412",
+    text:"FAQ"
+  },
+  {
+    link:"https://help.netflix.com/legal/privacy",
+    text:"Confidentialité"
+  },
+  {
+    link:"https://help.netflix.com/",
+    text:"Centre d'aide"
+  },
+  {
+    link:"https://www.netflix.com/fr/#",
+    text:"Préférences de cookies"
+  },
+  {
+    link:"https://netflix.shop/",
+    text:"Boutique Netflix"
+  },
+  {
+    link:"https://help.netflix.com/legal/corpinfo",
+    text:"Mentions légales"
+  },
+  {
+    link:"https://help.netflix.com/legal/termsofuse",
+    text:"Conditions d'utilisation"
+  },
+  {
+    link:"https://netflix.com/adchoices",
+    text:"Choix liés à la pub" 
+  }
+]
+
+export const FooterSigninDatasEn = [
+  {
+    link:"https://help.netflix.com/support/412",
+    text:"FAQ"
+  },
+  {
+    link:"https://help.netflix.com/legal/privacy",
+    text:"Privacy"
+  },
+  {
+    link:"https://help.netflix.com/",
+    text:"Help Center"
+  },
+  {
+    link:"https://www.netflix.com/fr-en/#",
+    text:"Cookies Preferences"
+  },
+  {
+    link:"https://netflix.shop/",
+    text:"Netflix Shop"
+  },
+  {
+    link:"https://help.netflix.com/legal/corpinfo",
+    text:"Corporate Information"
+  },
+  {
+    link:"https://help.netflix.com/legal/termsofuse",
+    text:"Terms of Use"
+  },
+  {
+    link:"https://netflix.com/adchoices",
+    text:"Ad Choices" 
+  }
+]

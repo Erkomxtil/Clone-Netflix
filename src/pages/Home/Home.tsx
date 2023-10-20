@@ -89,7 +89,7 @@ useEffect(()=> {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer signIn={false}/>
     </>
   )
 }
