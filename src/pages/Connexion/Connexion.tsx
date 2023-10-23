@@ -2,6 +2,7 @@ import bgConnexion from "../../assets/background-connexion.jpg"
 import logo from "../../assets/netflix-logo.svg"
 import { Link } from "react-router-dom"
 import { Footer } from "../../components/Footer"
+import { SignInForm } from "../../components/SignInForm"
 
 export const Connexion = () => {
   return (
@@ -16,6 +17,7 @@ export const Connexion = () => {
           </Link>
         </header>
       </div>
+      <SignInForm />
       <Footer signIn={true}/>
     </div>
   )

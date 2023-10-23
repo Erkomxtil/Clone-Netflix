@@ -16,7 +16,7 @@ export const Header = () => {
         <img className="w-[5.5625rem] h-[1.5rem] md:w-[9.25rem] md:h-[2.5rem]" src={logo} alt="Logo Netflix" />
         <div className="rounded-md text-[white] flex">
           <div className="relative">
-            <SelectLanguage footer={false}/>
+            <SelectLanguage footer={false} signin={false}/>
             <div role="img" aria-hidden="true" className="absolute top-[50%] translate-y-[-50%] right-[10px] bg-[rgb(0,0,0,0)]">
               <img src={arrow} alt="Arrow select" />
             </div>
