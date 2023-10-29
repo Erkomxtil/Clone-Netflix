@@ -4,8 +4,8 @@ import macMobile from "../assets/mac-tablet-phone.png"
 export const WatchDatasFr = [
   {
     tvVideo: true,
-    title:"Regardez Netflix sur&nbsp;votre TV",
-    text: "Regardez Netflix sur votre Smart&nbsp;TV, PlayStation, Xbox, Chromecast, Apple TV, lecteur Blu-ray et bien plus.",
+    title:"Regardez Netflix sur votre TV",
+    text: "Regardez Netflix sur votre Smart TV, PlayStation, Xbox, Chromecast, Apple TV, lecteur Blu-ray et bien plus.",
     image: tv,
     video: "https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v",
   },

@@ -1,12 +1,7 @@
-interface WatchOnTvMobileProps {
-  tvVideo: boolean
-  title: string
-  text: string
-  video: string
-  image: string
-}
+import { WatchOnTvMobileProps } from "../shared/interfaces/watchOnTvMobile.interface"
 
 export const WatchOnTvMobile = ({tvVideo,title, text, video, image}:WatchOnTvMobileProps) => {
+  
   return (
     <div className={tvVideo ? "bg-black py-[56px] sm:py-[72px]": "borderSection bg-black py-[56px] sm:py-[72px]" }>
       <div className={tvVideo ? 
@@ -23,12 +18,17 @@ export const WatchOnTvMobile = ({tvVideo,title, text, video, image}:WatchOnTvMob
           "overflow-hidden absolute top-[20%]  border-black border-2": 
           "overflow-hidden absolute top-[10%]  border-black border-2 w-[100%] max-w-[64%] mm:max-w-[400px] md:max-w-[64%] xl1:max-w-[400px]"
           }>
-            <video autoPlay playsInline muted loop className={tvVideo ? 
-             "inline-block !scale-[none]":
-             "inline-block !scale-[none]"
-            }>
+            { tvVideo ?
+              <video autoPlay playsInline muted loop className="inline-block !scale-[none]">
+                <source src={video} type="video/mp4"/>
+                your browser does not support the video tag. I suggest to upgrade your browser
+              </video>
+              :
+              <video autoPlay playsInline muted loop >
               <source src={video} type="video/mp4"/>
-            </video>
+              your browser does not support the video tag. I suggest to upgrade your browser
+              </video>            
+            }
           </div>
         </div>
       </div>

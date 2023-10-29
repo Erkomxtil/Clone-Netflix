@@ -39,7 +39,7 @@ useEffect(()=> {
 
   return (
     <>
-      <div className="backgroundIntro relative bg-black">
+      <div className="backgroundIntro relative bg-black pb-24 sm:pb-6">
         <Header />
         <Intro />
         <EmailForm/>
@@ -71,7 +71,7 @@ useEffect(()=> {
           gif={profil.gif}
         />
       )}
-      <div className="borderSection text-[white] bg-black pt-[56px] px-[32px] sm:py-[72px]">
+      <div className="borderSection text-[white] bg-black pt-[56px] px-[32px] pb-24 sm:py-[72px]">
         <div className="lg:max-w-[calc(83.33333333333334%-6rem)] lg:mx-[auto]">
           <h2 className="text-center text-[2rem] md:text-[3rem] font-[700] mb-[24px]">
             {language === "fr" ? "Foire aux questions": "Frequently Asked Questions"}            
