@@ -4,6 +4,7 @@ import {
 } from "react-router-dom"
 import { Home } from "../pages/Home/Home"
 import { Connexion } from "../pages/Connexion/Connexion"
+import { Thanks } from "../pages/Thanks/Thanks"
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path:"/connexion",
     element: <Connexion />
+  },
+  {
+    path:"/thanks",
+    element: <Thanks/>
   }
 ])
 

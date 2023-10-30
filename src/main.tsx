@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { Router } from './components/Router'
+import { Router } from './Route/Router'
 import './index.css'
 import { UserProvider } from './utils/context/languageContext'
 

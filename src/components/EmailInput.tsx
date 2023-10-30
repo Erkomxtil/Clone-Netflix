@@ -8,7 +8,6 @@ export const EmailInput = ({signIn, home}:SignInProps) => {
   const {language} = useContext(UserContext)
   const [email, setEmail] = useState('')
   const [labelAnimation, setLabelAnimation] = useState('')
-  // console.log(home);
 
   const handleInput = () => {  
     if(email === "" ) {
