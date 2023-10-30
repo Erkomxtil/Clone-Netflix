@@ -3,15 +3,25 @@ import { EmailInput } from "./EmailInput"
 import { Link } from "react-router-dom"
 import { PasswordInput } from "./PasswordInput"
 import { UserContext } from "../utils/context/languageContext"
+import { CheckEmail } from "../utils/checkEmail/CheckEmail"
 
 export const SignInForm = () => {
   const {language} = useContext(UserContext)
   const [showText, setShowText] = useState(false)
+  const [emailValue, setEmailValue] = useState(true)
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const formData = (e.target as HTMLInputElement).getElementsByTagName("input")
     const email = formData[0].value
     const password = formData[1].value
+
+    if(email !== "" && CheckEmail(email) === false) {
+      setEmailValue(false)
+    }
+
+    if(email !== "" && CheckEmail(email)) {
+      setEmailValue(true)
+    }
  
     if( email === "netflix@test.fr" && password === "netflix123") {
       alert("Merci pour votre visite sur mon clone de Netflix, vous allez être redirigé vers mon site personnel, bonne visite.")
@@ -26,7 +36,7 @@ export const SignInForm = () => {
       <div className="bg-[rgba(0,0,0,.75)] min-h-[600px] px-5 sm:px-[60px] pt-[60px] pb-[40px] sm:max-w-[450px] mx-auto">
         <h1 className="text-[white] text-[32px] font-semibold mb-[28px]">{language === "fr" ? "S'identifier" : "Sign In"}</h1>
         <form onSubmit={(e) => handleSubmit(e)}>
-          <EmailInput signIn={true} home={true}/><br />
+          <EmailInput signIn={true} home={emailValue}/><br />
           <PasswordInput />
           <br />
           <button className="bg-[red] text-[white] w-full rounded-md p-4 font-semibold mb-3" type="submit">{language === "fr" ? "S'identifier": "Sign In"}</button>
