@@ -21,9 +21,6 @@ export const EmailInput = ({signIn, home}:SignInProps) => {
       setLabelAnimation("clickOut")  
     }
   }
-
-  console.log("input"+ home);
-  
   
   return (
     <>

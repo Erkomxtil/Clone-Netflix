@@ -19,12 +19,12 @@ export const WatchOnTvMobile = ({tvVideo,title, text, video, image}:WatchOnTvMob
           "overflow-hidden absolute top-[10%]  border-black border-2 w-[100%] max-w-[64%] mm:max-w-[400px] md:max-w-[64%] xl1:max-w-[400px]"
           }>
             { tvVideo ?
-              <video autoPlay playsInline muted loop className="inline-block !scale-[none]">
+              <video width="480" height="270" autoPlay playsInline muted loop className="inline-block !scale-[none]">
                 <source src={video} type="video/mp4"/>
                 your browser does not support the video tag. I suggest to upgrade your browser
               </video>
               :
-              <video autoPlay playsInline muted loop >
+              <video width="480" height="270" autoPlay playsInline muted loop >
               <source src={video} type="video/mp4"/>
               your browser does not support the video tag. I suggest to upgrade your browser
               </video>            
