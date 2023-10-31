@@ -16,11 +16,11 @@ export const SelectLanguage = ({footer, signin}:FooterProp) => {
         <img className={signin ? "opacity-30" : ""} src={languageIcon} alt="Language icon" />
       </div>
       {signin ?
-      <select name="language" id="language" className={footer ? "bg-[transparent] border-[1px] border-[#737373] border-solid rounded-md mx-[4px] w-[3rem] sm:w-fit px-[1.5rem] appearance-none relative h-[28px] z-10 text-[#737373]" : "bg-[transparent] border-[1px] border-[#737373] border-solid rounded-md mx-[4px] w-[3rem] sm:w-fit px-[1.5rem] appearance-none relative h-[28px] z-10"} defaultValue="Français" onChange={(e) => setLanguage(e.target.value)}>
+      <select name="language" id="language" className={footer ? "bg-[transparent] border-[1px] border-[#737373] border-solid rounded-md mx-[4px] sm:w-fit px-[1.5rem] appearance-none relative h-[28px] z-10 text-[#737373] w-auto" : "bg-[transparent] border-[1px] border-[#737373] border-solid rounded-md mx-[4px] sm:w-fit px-[1.5rem] appearance-none relative h-[28px] z-10 w-auto"} defaultValue="Français" onChange={(e) => setLanguage(e.target.value)}>
           <option className="optionLanguage" value="fr">Français</option>
           <option className="optionLanguage" value="en">English</option>
       </select> :
-      <select name="language" id="language" className={footer ? "bg-[transparent] border-[1px] border-[rgba(255,255,255,0.7)] border-solid rounded-md mx-[4px] w-[3rem] sm:w-fit px-[1.5rem] appearance-none relative h-[28px] z-10 text-[rgba(255,255,255,0.7)]" : "bg-[transparent] border-[1px] border-[rgba(255,255,255,0.7)] border-solid rounded-md mx-[4px] w-[3rem] sm:w-fit px-[1.5rem] appearance-none relative h-[28px] z-10"} defaultValue="Français" onChange={(e) => setLanguage(e.target.value)}>
+      <select name="language" id="language" className={footer ? "bg-[transparent] border-[1px] border-[rgba(255,255,255,0.7)] border-solid rounded-md mx-[4px] sm:w-fit px-[1.5rem] appearance-none relative h-[28px] z-10 text-[rgba(255,255,255,0.7)] w-auto" : "bg-[transparent] border-[1px] border-[rgba(255,255,255,0.7)] border-solid rounded-md mx-[4px] sm:w-fit px-[1.5rem] appearance-none relative h-[28px] z-10 w-auto"} defaultValue="Français" onChange={(e) => setLanguage(e.target.value)}>
       <option className="optionLanguage" value="fr">Français</option>
       <option className="optionLanguage" value="en">English</option>
       </select>
